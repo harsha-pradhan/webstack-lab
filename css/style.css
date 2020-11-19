@@ -6663,6 +6663,14 @@ i:before {
   color: #f195b2;
   font-family: "Open Sans", sans-serif;
 }
+#error_message{
+  margin-bottom: 20px;
+  background: pink;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
 
 /* End Footer Area css
 ============================================================================================ */
