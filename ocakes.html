@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="demo" onchange="show()">
+        <option value="">select</option>
+        <option value="pastry.jpg">pastry</option>
+        <option value="cook.jpg">cookiess</option>
+        <option value="brownie.jpg">brownie</option>
+    </select>
+    <script>
+        function show()
+    {
+        var value=document.getElementById("demo").value;
+        document.getElementById("demo").style.backgroundSize = "10px 120px";
+
+            document.body.style.backgroundImage = "url(" +value+" )";
+            document.cookie="bg="+value+";expires=Fri,6 Aug 2021 01:00:00 UTC;";
+    }
+    window.onload=function()
+    {
+        if(document.cookie.length!=0)
+        {
+            var a=document.cookie.split("=");
+            document.getElementById("demo").style.backgroundImage.value="url(" +a[1]+" )";
+
+            document.body.style.backgroundImage="url(" +a[1]+" )";
+
+        }
+    }
+    </script>
+</body>
+</html>

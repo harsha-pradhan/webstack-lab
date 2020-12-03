@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<cake_bakery>
+<customer>
+		<SNO>1</SNO>
+		<Customer_ID>1011</Customer_ID>
+		<Name>RAHUL</Name>
+		<Gender>Male</Gender>
+		<DOB>11/09/1998</DOB>
+		<Email_ID>rahul.010@gmail.com</Email_ID>
+		<Mobile>7908734201</Mobile>
+	</customer>
+	
+	<customer>
+		<SNO>2</SNO>
+		<Customer_ID>1012</Customer_ID>
+		<Name>JASON</Name>
+		<Gender>Male</Gender>
+		<DOB>18/05/1998</DOB>
+		<Email_ID>jason.96@gmail.com</Email_ID>
+		<Mobile>7672179065</Mobile>
+	</customer>
+	
+	<customer>
+		<SNO>3</SNO>
+		<Customer_ID>1013</Customer_ID>
+		<Name>MONICA</Name>
+		<Gender>Female</Gender>
+		<DOB>14109/1999</DOB>
+		<Email_ID>monica.sh@gmail.com</Email_ID>
+		<Mobile>9094321551</Mobile>
+	</customer>
+	
+	<customer>
+		<SNO>4</SNO>
+		<Customer_ID>1014</Customer_ID>
+		<Name>ANGELA</Name>
+		<Gender>Female</Gender>
+		<DOB>10/11/2000</DOB>
+		<Email_ID>angel1.k@gmail.com</Email_ID>
+		<Mobile>9876256879</Mobile>
+	</customer>
+	
+	<customer>
+		<SNO>5</SNO>
+		<Customer_ID>1015</Customer_ID>
+		<Name>SNEHIL</Name>
+		<Gender>Female</Gender>
+		<DOB>12/12/1998</DOB>
+		<Email_ID>snehil123.g@gmail.com</Email_ID>
+		<Mobile>7903214550</Mobile>
+	</customer>
+
+	
+</cake_bakery>
