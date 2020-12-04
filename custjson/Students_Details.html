@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <style>
+            
+    table,th,td
+    {
+     border:1px solid blue;
+     border-collapse: collapse;
+     background-color: pink;
+     border-width: 3px 3px;
+    }
+    th,td{
+        padding: 5px;
+    }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.js">
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <table id="table_1" Border="2px solid black">
+                <tr>
+                    <th>CUSTOMER NAME</th>
+                    <th>REVIEWS</th>
+                    
+                </tr>
+                <script>
+                    $(document).ready(function()
+                    {
+                        $.getJSON("Test_1.json", function(data)
+                        {
+                            var student='';
+                            $.each(data, function(key,value)
+                            {
+                                student+='<tr>';
+                                student+='<td>'+value.CUSTOMER_NAME+'</td>';
+                                student+='<td>'+value.REVIEW+'</td>';
+                             
+                                
+                                student+='<tr>';                                
+                            });
+                            $('#table_1').append(student);
+                        });
+                    });
+                </script>
+            </table>
+        </div>
+    </body>
+
+</html>
