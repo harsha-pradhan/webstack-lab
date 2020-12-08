@@ -2,20 +2,17 @@ angular.module("MyApp",[])
 .controller("MyCtrl",function($scope)
 {
     var cakes=[
-        {name:"black forest",id:'100',toppings:"choco chips",price:500},
-        {name:"white forest",id:'101',toppings:"choco chips,sprinklers",price:500},
-        {name:"pineapple delight",id:'102',toppings:"cherries",price:550},
-        {name:"strawberry",id;'103',toppings:"white chocolate",price:500},
-        {name:"chocolate truffle",id;'104',toppings:"sprinklers",price:500},
-        {name:"chocolate moose",id:'105',toppings:"choco chips,white choco chips",price:500},
-        {name:"vanilla dip",id:'106',toppings:"choco chips,sprinklers",price:500},
-        {name:"choco vanilla",id:'107',toppings:"choco chips,sprinklers",price:500},
-        {name:"strawberry dip",id:'108',toppings:"white choco chips,sprinklers",price:500},
-        {name:"red velvet cake",id:'109',toppings:"sprinklers",price:500},
-       
-       
+        {name:"Python",id:'101',pounds:36,price:2500},
+        {name:"C programming",id:'102',hours:48,price:2000},
+        {name:"C++",id:'103',hours:25,price:1500},
+        {name:"Java",id:'104',,hours:52,price:2250},
+        {name:"Data Communication",id:'105',mode:"Offline",hours:82,price:3250},
+        {name:"Statistics",id:'106',mode:"Online",hours:72,price:2450},
+        {name:"Data Structures",id:'107',mode:"Offline",hours:48,price:1250},
+        {name:"Computer Graphics",id:'108',mode:"Online",hours:92,price:5250},
+        {name:"Data Mining",id:'109',mode:"Online",hours:37,price:4250}
     ];
     console.log(cakes);
-    $scope.cakes=cakes;
+    $scope.courses=cakes;
     $scope.rowlimit=4;
 });

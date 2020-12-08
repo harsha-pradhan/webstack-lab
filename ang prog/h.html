@@ -9,26 +9,28 @@
 </head>
 <body ng-app="MyApp">
     <div ng-controller="MyCtrl">
-        Rows to Display:<input type="number" step="1" min="0" max="9" ng-model="rowlimit" />
+        Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
         <br \>
         <br \>
 
-        Search:<input type="text" placeholder="Search Cakes" ng-model="Search" />
+        Search:<input type="text" placeholder="Seach Courses" ng-model="Search" />
         <br \>
         <br \>
         <table>
             <tr>
                 <th>Cake Name</th>
-                <th> Cake ID</th>
-                <th>Toppings</th>
+                <th>Cake ID</th>
+                
+                <th>Pounds</th>
                 <th>Price</th>
             </tr>
             <tbody>
-                <tr ng-repeat="cake in cakes | limitTo:rowlimit |filter:Search ">
-                    <td>{{cake.name | uppercase}}</td>
-                    <td>{{cake.id | number:0}}</td>
-                    <td>{{cake.toppings | lowercase}}</td>
-                     <td> {{cakes.price | currency:"&#8377;":0 }}</td>
+                <tr ng-repeat="course in courses | limitTo:rowlimit |filter:Search ">
+                    <td>{{course.name | uppercase}}</td>
+                    <td>{{course.id | number:0}}</td>
+                    <td>{{course.mode | lowercase}}</td>
+                    <td>{{course.hours | number:0}}</td>
+                    <td> {{course.price | currency:"&#8377;":0 }}</td>
                 </tr>
             </tbody>
         </table>
