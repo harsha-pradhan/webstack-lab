@@ -1,35 +1,97 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="angular.min.js"></script>
-    <script src="filter_app.js"></script>
-    <link href="filter.css" rel="stylesheet">
-</head>
-<body ng-app="MyApp">
-    <div ng-controller="MyCtrl">
-        Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
-        <br \>
-        <br \>
 
-        Search:<input type="text" placeholder="Seach Courses" ng-model="Search" />
-        <br \>
-        <br \>
-        <table>
+<style>
+    #grad {
+background-image: linear-gradient(to right,pink,blue);
+}
+    table,th,td
+    {
+     border:1px solid blue;
+     border-collapse: collapse;
+     background-color: pink;
+     border-width: 3px 3px;
+    }
+    th,td{
+        padding: 5px;
+    }
+    button {
+        display: inline-block;
+        background-color: #7b38d8;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 18px;
+        padding: 20px;
+        width: 350px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      button:hover {
+        background-color: #f7c2f9;
+      }
+      button:hover span {
+        padding-right: 25px;
+      }
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="angular.min.js"></script>
+        <script src="filter_app.js"></script>
+        <link href="filter.css" rel="stylesheet">
+    </head>
+<body id=grad ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+        <h1>OUR MENU</h1>
+    <br/>
+    <br/>
+    
+        Number of items to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
+        <br/>
+        <br/>
+
+        Search:
+        <input type="text" placeholder="Seach cakes " ng-model="Search" />
+       
+        <table align="left">
+            <br/>
+            <br/>
+            <br/>
+
+
             <tr>
                 <th>Cake Name</th>
                 <th>Cake ID</th>
-                
-                <th>Pounds</th>
+                <th>Toppings</th>
                 <th>Price</th>
             </tr>
             <tbody>
-                <tr ng-repeat="course in courses | limitTo:rowlimit |filter:Search ">
+                <tr ng-repeat="course in courses| limitTo:rowlimit |filter:Search ">
                     <td>{{course.name | uppercase}}</td>
                     <td>{{course.id | number:0}}</td>
-                    <td>{{course.mode | lowercase}}</td>
-                    <td>{{course.hours | number:0}}</td>
+                    <td>{{course.toppings | lowercase}}</td>
+                    
                     <td> {{course.price | currency:"&#8377;":0 }}</td>
                 </tr>
             </tbody>
@@ -38,4 +100,3 @@
     
 </body>
 </html>
-

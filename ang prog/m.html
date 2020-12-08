@@ -1,39 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        #grad {
+  background-image: linear-gradient(to right,purple, pink);
+}
+        table,th,td
+        {
+         border:1px solid blue;
+         border-collapse: collapse;
+         background-color: pink;
+         border-width: 3px 3px;
+        }
+        th,td{
+            padding: 5px;
+        }
+        button {
+            display: inline-block;
+            background-color: #7b38d8;
+            border-radius: 10px;
+            border: 4px double #cccccc;
+            color: #eeeeee;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            width: 350px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+          }
+          button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          button:hover {
+            background-color: #f7c2f9;
+          }
+          button:hover span {
+            padding-right: 25px;
+          }
+          button:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+        </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="angular.min.js"></script>
-    <script src="course.js"></script>
+    <script src="cake.js"></script>
     <link href="filter.css" rel="stylesheet">
 </head>
-<body ng-app="myapp" ng-controller="myctrl">
-   <h3>Course Information</h3>
-    <table cellpadding="2" cellspacing="2" border="1">
+<body id=grad ng-app="myapp" ng-controller="myctrl">
+   <h3 align="center">WHY DON'T YOU SUGGEST A CAKE TO BE ADDED IN OUR MENU?</h3>
+    <table align="center" cellpadding="2" cellspacing="2" border="1">
         <tr>
             <th>Index</th>
             <th>CAKE ID</th>
             <th>CAKE NAME</th>
             <th>PRICE</th>
-            <th>NUMBER OF HOURS</th>
+           
             <th>OPTIONS</th>
         </tr>
         <tr ng-repeat="course in listCourses">
             <td>{{$index}}</td>
-            <td>{{cake.id}}</td>
-            <td>{{cake.name}}</td>
-            <td>{{cake.price | currency:"&#8377;":0}}</td>
-            <td>{{cake.hours}}</td>
+            <td>{{course.id}}</td>
+            <td>{{course.name}}</td>
+            <td>{{course.price | currency:"&#8377;":0}}</td>
+            
             <td>
                 <a href="#" ng-click="delete()">Delete</a> |
                 <a href="#" ng-click="edit(course.id)">Edit</a>
             </td>
         </tr>
     </table>
-    <h3>Course Addition/Modification</h3>
+    <h3 align="center">Cake menu Addition/Modification</h3>
+    <h4 align="center"> just fill in what you think should be appropriate to be added in our menu</h4>
    
-    <table cellpadding="2" cellspacing="2">
+    <table align="center" cellpadding="2" cellspacing="2">
         <tr>
             <td>CAKE ID</td>
             <td><input type="text" ng-model="id"></td>
@@ -46,10 +100,7 @@
             <td>PRICE</td>
             <td><input type="text" ng-model="price"></td>
         </tr>
-        <tr>
-            <td>NUMBER OF HOURS</td>
-            <td><input type="text" ng-model="hours"></td>
-        </tr>
+       
         <tr>
             <td>&nbsp;</td>
             <td><input type="button" value="ADD" ng-click="add()">
