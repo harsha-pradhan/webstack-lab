@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="filter_app.js"></script>
+    <link href="filter.css" rel="stylesheet">
+</head>
+<body ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+        Rows to Display:<input type="number" step="1" min="0" max="9" ng-model="rowlimit" />
+        <br \>
+        <br \>
+
+        Search:<input type="text" placeholder="Search Cakes" ng-model="Search" />
+        <br \>
+        <br \>
+        <table>
+            <tr>
+                <th>Cake Name</th>
+                <th> Cake ID</th>
+                <th>Toppings</th>
+                <th>Price</th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="cake in cakes | limitTo:rowlimit |filter:Search ">
+                    <td>{{cake.name | uppercase}}</td>
+                    <td>{{cake.id | number:0}}</td>
+                    <td>{{cake.toppings | lowercase}}</td>
+                     <td> {{cakes.price | currency:"&#8377;":0 }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
+
